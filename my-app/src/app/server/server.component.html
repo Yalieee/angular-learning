@@ -1,3 +1,8 @@
 <h3>The Server Status is {{ getStatus() }}</h3>
 
-<button class="btn btn-primary" [disabled]="buttonDisalbed">Add Server</button>
+<button 
+    class="btn btn-primary" 
+    [disabled]="buttonDisalbed"
+    (click)="onCreateServer()">Add Server</button>
+
+<p>{{ createStatus }}</p>

@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
 })
 export class ServerComponent {
   status = 'online';
+  createStatus = 'unavailable';
 
   buttonDisalbed = true;
 
@@ -16,6 +17,10 @@ export class ServerComponent {
   }
 
   getStatus() {
-    return this.status;
+    this.status;
+  }
+
+  onCreateServer() {
+    this.createStatus = 'available';
   }
 }
