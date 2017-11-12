@@ -5,4 +5,17 @@ import { Component } from '@angular/core';
   templateUrl: './server.component.html'
 })
 export class ServerComponent {
+  status = 'online';
+
+  buttonDisalbed = true;
+
+  constructor() {
+    setTimeout(() => {
+      this.buttonDisalbed = false;
+    }, 2000);
+  }
+
+  getStatus() {
+    return this.status;
+  }
 }
