@@ -6,3 +6,10 @@
     (click)="onCreateServer()">Add Server</button>
 
 <p>{{ createStatus }}</p>
+
+<input
+    type="test"
+    class="form-control"
+    (input)="onInputType($event)">
+
+{{ inputName }}

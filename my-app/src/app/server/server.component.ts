@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 export class ServerComponent {
   status = 'online';
   createStatus = 'unavailable';
+  inputName = '';
 
   buttonDisalbed = true;
 
@@ -22,5 +23,9 @@ export class ServerComponent {
 
   onCreateServer() {
     this.createStatus = 'available';
+  }
+
+  onInputType(event: Event) {
+    this.inputName = (<HTMLInputElement>event.target).value;
   }
 }
