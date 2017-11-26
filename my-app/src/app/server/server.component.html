@@ -1,20 +1,14 @@
-<h3>The Server Status is {{ getStatus() }}</h3>
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="inputName">
 
 <button 
     class="btn btn-primary" 
     [disabled]="buttonDisalbed"
     (click)="onCreateServer()">Add Server</button>
 
-<p>{{ createStatus }}</p>
-
-<input
-    type="test"
-    class="form-control"
-    (input)="onInputType($event)">
-
-{{ inputName }}
-
-<input
-type="test"
-class="form-control"
-[(ngModel)]="inputName">
+<p *ngIf="serverCreated; else noServer">The server has been created. The name is {{ inputName }}</p>
+<ng-template #noServer>
+    <p>No server is created.</p>
+</ng-template>

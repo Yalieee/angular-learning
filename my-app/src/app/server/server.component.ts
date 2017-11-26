@@ -5,11 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './server.component.html'
 })
 export class ServerComponent {
-  status = 'online';
-  createStatus = 'unavailable';
   inputName = '';
-
   buttonDisalbed = true;
+  serverCreated = false;
 
   constructor() {
     setTimeout(() => {
@@ -17,12 +15,10 @@ export class ServerComponent {
     }, 2000);
   }
 
-  getStatus() {
-    this.status;
-  }
-
   onCreateServer() {
-    this.createStatus = 'available';
+    if (0 != this.inputName.trim().length) {
+      this.serverCreated = true;
+    }
   }
 
   onInputType(event: Event) {
